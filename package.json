@@ -1,0 +1,25 @@
+{
+  "name": "vuejs",
+  "version": "0.0.1",
+  "description": "Some Vue stuff",
+  "main": "index.js",
+  "author": "evenfrost",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "html-webpack-plugin": "^2.24.0",
+    "pug-loader": "^2.3.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot --port 5000"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-beta6",
+    "vue": "^2.0.3"
+  }
+}
