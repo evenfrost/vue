@@ -16,7 +16,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --port 5000"
+    "start": "webpack-dev-server --inline --port 5000"
   },
   "dependencies": {
     "pug": "^2.0.0-beta6",

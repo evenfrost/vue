@@ -5,7 +5,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const rootResolve = pathname => resolve(__dirname, pathname);
 
 export default {
-  entry: rootResolve('client/index.js'),
+  entry: [
+    'webpack-dev-server/client?http://localhost:5000',
+    rootResolve('client/index.js'),
+  ],
   output: {
     path: rootResolve('public'),
     filename: 'bundle.js',
@@ -24,6 +27,7 @@ export default {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       template: `${rootResolve('client/index.pug')}`,
     }),
@@ -35,5 +39,6 @@ export default {
   },
   devServer: {
     contentBase: rootResolve('client'),
+    publicPath: '/',
   },
 };

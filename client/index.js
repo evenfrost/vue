@@ -6,3 +6,5 @@ const app = new Vue({
     message: 'Hello Vue!',
   },
 });
+
+window.app = app;
