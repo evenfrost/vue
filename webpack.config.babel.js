@@ -14,9 +14,11 @@ export default {
   module: {
     loaders: [{
       test: /\.pug$/,
+      exclude: /node_modules/,
       loader: 'pug',
     }, {
-      test: /\.js/,
+      test: /\.js$/,
+      exclude: /node_modules/,
       loader: 'babel',
     }],
   },
