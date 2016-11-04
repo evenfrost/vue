@@ -4,5 +4,8 @@ html
 
   body
     main
-      div(v-bind:title='message') lorem ipsum
-      span {{ message }}
+      input(v-model='message')
+      p {{ message }}
+
+      ul
+        todo-item
