@@ -14,6 +14,7 @@ export default {
     filename: 'bundle.js',
     publicPath: '/',
   },
+  devtool:  'eval',
   module: {
     loaders: [{
       test: /\.pug$/,
@@ -23,6 +24,14 @@ export default {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
+    }, {
+      test: /\.vue/,
+      exclude: /node_modules/,
+      loader: 'vue',
+    }, {
+      test: /\.styl/,
+      exclude: /node_modules/,
+      loader: 'style!css!loader',
     }],
   },
   plugins: [
@@ -34,11 +43,17 @@ export default {
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.js',
+      vue$: 'vue/dist/vue.js',
     },
   },
   devServer: {
     contentBase: rootResolve('client'),
     publicPath: '/',
+  },
+  vue: {
+    loaders: {
+      html: 'pug',
+      style: 'stylus',
+    },
   },
 };
