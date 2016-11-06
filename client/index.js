@@ -1,15 +1,12 @@
 import Vue from 'vue';
+import AppHeader from 'components/app-header/index.vue';
 
-const app = new Vue({
+new Vue({
   el: 'main',
   data: {
     message: 'lorem',
   },
+  components: {
+    'app-header': AppHeader,
+  },
 });
-
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>',
-});
-
-window.app = app;

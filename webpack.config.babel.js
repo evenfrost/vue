@@ -14,7 +14,7 @@ export default {
     filename: 'bundle.js',
     publicPath: '/',
   },
-  devtool:  'eval',
+  devtool: 'inline-source-map',
   module: {
     loaders: [{
       test: /\.pug$/,
@@ -45,6 +45,8 @@ export default {
     alias: {
       vue$: 'vue/dist/vue.js',
     },
+    extensions: ['', '.js', '.vue'],
+    root: rootResolve('client'),
   },
   devServer: {
     contentBase: rootResolve('client'),
