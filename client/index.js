@@ -1,12 +1,10 @@
 import Vue from 'vue';
-import AppHeader from 'components/app-header/index.vue';
+import App from 'components/app';
 
 new Vue({
   el: 'main',
-  data: {
-    message: 'lorem',
-  },
+  template: '<App />',
   components: {
-    'app-header': AppHeader,
+    App,
   },
 });

@@ -25,13 +25,13 @@ export default {
       exclude: /node_modules/,
       loader: 'babel',
     }, {
-      test: /\.vue/,
+      test: /\.vue$/,
       exclude: /node_modules/,
       loader: 'vue',
     }, {
-      test: /\.styl/,
+      test: /\.styl$/,
       exclude: /node_modules/,
-      loader: 'style!css!loader',
+      loader: 'style!css!stylus',
     }],
   },
   plugins: [
@@ -55,7 +55,7 @@ export default {
   vue: {
     loaders: {
       html: 'pug',
-      style: 'stylus',
+      css: 'style!css!stylus',
     },
   },
 };
