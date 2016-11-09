@@ -1,1 +1,2 @@
-<template src="./template.pug" lang="pug"></template>
+<template src="./template.pug"></template>
+<style src="./style.styl"></style>
