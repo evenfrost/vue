@@ -19,7 +19,7 @@ export default {
     loaders: [{
       test: /\.pug$/,
       exclude: /node_modules/,
-      loader: 'pug',
+      loader: 'pug-html',
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
