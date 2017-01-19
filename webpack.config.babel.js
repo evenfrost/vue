@@ -34,11 +34,7 @@ export default {
       options: {
         loaders: {
           html: 'pug-loader',
-          css: [
-            'style-loader',
-            'css-loader',
-            'stylus-loader',
-          ],
+          css: 'style-loader!css-loader!stylus-loader',
         },
       },
     }],
