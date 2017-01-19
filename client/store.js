@@ -12,4 +12,9 @@ export default new Vuex.Store({
       state.count += amount;
     },
   },
+  actions: {
+    increment({ commit }, { amount }) {
+      commit('increment', { amount });
+    },
+  },
 });

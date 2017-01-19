@@ -11,7 +11,7 @@ export default {
   ]),
   methods: {
     increment() {
-      return this.$store.commit({ type: 'increment', amount: +this.amount || 1 });
+      return this.$store.dispatch('increment', { amount: +this.amount || 1 });
     },
   },
 };
