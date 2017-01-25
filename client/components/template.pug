@@ -1,6 +1,7 @@
 main
   div(v-if='loading') loading
   div {{count}}
+  div x10: {{multiplyByTen}}
   form(@submit='increment($event)')
     div
       input(type='number', v-model='amount', autofocus)

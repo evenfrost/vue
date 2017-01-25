@@ -1,4 +1,4 @@
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -7,9 +7,14 @@ export default {
       loading: false,
     };
   },
-  computed: mapState([
-    'count',
-  ]),
+  computed: {
+    ...mapState([
+      'count',
+    ]),
+    ...mapGetters([
+      'multiplyByTen',
+    ]),
+  },
   methods: {
     async increment($event) {
       if ($event) {
