@@ -4,14 +4,23 @@ export default {
   data() {
     return {
       amount: 1,
+      loading: false,
     };
   },
   computed: mapState([
     'count',
   ]),
   methods: {
-    increment() {
-      return this.$store.dispatch('increment', { amount: +this.amount || 1 });
+    async increment($event) {
+      if ($event) {
+        $event.preventDefault();
+      }
+
+      if (!this.loading) {
+        this.loading = true;
+        await this.$store.dispatch('increment', { amount: +this.amount || 1 });
+        this.loading = false;
+      }
     },
   },
 };

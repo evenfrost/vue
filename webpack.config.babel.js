@@ -7,7 +7,10 @@ const { PORT } = process.env;
 const rootResolve = pathname => resolve(__dirname, pathname);
 
 export default {
-  entry: rootResolve('client/index.js'),
+  entry: [
+    'babel-polyfill',
+    rootResolve('client/index.js'),
+  ],
   output: {
     path: rootResolve('public'),
     filename: 'bundle.js',

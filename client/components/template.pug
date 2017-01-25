@@ -1,5 +1,8 @@
 main
+  div(v-if='loading') loading
   div {{count}}
-  div
-    input(type='number', v-model='amount')
-  button(@click='increment') increment by {{ amount }}
+  form(@submit='increment($event)')
+    div
+      input(type='number', v-model='amount', autofocus)
+    div
+      button(@click='increment', type='submit') increment by {{ amount }}

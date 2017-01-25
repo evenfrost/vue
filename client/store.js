@@ -14,7 +14,12 @@ export default new Vuex.Store({
   },
   actions: {
     increment({ commit }, { amount }) {
-      commit('increment', { amount });
+      return new Promise(resolve => {
+        setTimeout(() => {
+          commit('increment', { amount });
+          resolve();
+        }, 1000);
+      });
     },
   },
 });
