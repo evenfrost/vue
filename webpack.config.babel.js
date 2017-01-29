@@ -16,6 +16,7 @@ export default {
     filename: 'bundle.js',
     publicPath: '/',
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
@@ -23,7 +24,7 @@ export default {
       loader: 'babel-loader',
     }, {
       test: /\.pug$/,
-      loader: 'pug-loader',
+      loader: 'pug-html-loader',
     }, {
       test: /\.styl$/,
       use: [
@@ -36,7 +37,7 @@ export default {
       loader: 'vue-loader',
       options: {
         loaders: {
-          html: 'pug-loader',
+          html: 'pug-html-loader',
           css: 'style-loader!css-loader!stylus-loader',
         },
       },
@@ -50,9 +51,9 @@ export default {
   ],
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.js',
+      vue$: 'vue/dist/vue.common.js',
     },
-    extensions: ['*', '.js', '.vue', '.jsx'],
+    extensions: ['*', '.js', '.vue'],
     modules: [
       rootResolve('client'),
       'node_modules',
