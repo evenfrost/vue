@@ -1,7 +1,8 @@
 import VueRouter from 'vue-router';
 
 import Root from 'components/root';
-import Test from 'components/test';
+import Foo from 'components/foo';
+import Bar from 'components/foo/bar';
 import User from 'components/user';
 
 export default new VueRouter({
@@ -11,8 +12,14 @@ export default new VueRouter({
       path: '/',
       component: Root,
     }, {
-      path: '/test',
-      component: Test,
+      path: '/foo',
+      component: Foo,
+      children: [
+        {
+          path: 'bar',
+          component: Bar,
+        },
+      ],
     }, {
       path: '/user/:id',
       component: User,
