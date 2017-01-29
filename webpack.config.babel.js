@@ -63,5 +63,6 @@ export default {
     contentBase: rootResolve('client'),
     compress: true,
     port: +PORT || 3000,
+    historyApiFallback: true,
   },
 };
